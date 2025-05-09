@@ -5,51 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-    
+    #d1{
+        display: flex;
+  justify-content: center;
+  align-items: center;
+    }
     h2{
         justify-content: center;
         color: dodgerblue;
     }
-        .container {
-            justify-content: center;
-            position: center;    width: 900px;    height: 600px;
-            background: white;   border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            overflow: hidden;   }
-            button{
-                background-color: green;
-                color: white;
-            }
+       #p1 {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   
+}
+
+.container {
+  width: 900px;
+  height: 600px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+}
+
+button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
     </style>
 </head>
 <body>
     <h1>Assignment 4</h1>
-    <h2>facebook</h2>
-    <div class="container">
-        <h3>Create a new account</h3>
-        <h6>It's quick and easy.</h6>
-        <hr>
-        <form>
-            <p><input type="text" placeholder="First Name">
-            <input type="text" placeholder="Last Name"></p>
-            <h4><label for="">Date of birth?</label>
-            <p><input type="date"></p></h4>
-            <h4>Gender</h4>
-            <p><input type="radio">Male
-            <input type="radio">Female
-        <input type="radio">Custom</p>
-        <p><input type="number" placeholder="Mobile Number or email address"></p>
-        <p><input type="password" placeholder="Password"></p>
-        <p>
-            <h6>
-                People who use our service may have uploaded your contact information to Facebook. Learn more.
+    <div id="d1">
+        <h2>facebook</h2>
+    </div>
 
-By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.
-            </h6>
-        </p>
-        <button><strong>Submit</strong></button>
-        <p>Already have an account?</p>
-        </form>
+    <div id="p1">
+        <div class="container">
+            <h3>Create a new account</h3>
+            <h6>It's quick and easy.</h6>
+            <hr>
+            <form>
+                <p><input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name"></p>
+                <h4><label for="">Date of birth?</label>
+                <p><input type="date"></p></h4>
+                <h4>Gender</h4>
+                <p><input type="radio">Male
+                <input type="radio">Female
+            <input type="radio">Custom</p>
+            <p><input type="number" placeholder="Mobile Number or email address"></p>
+            <p><input type="password" placeholder="Password"></p>
+            <p>
+                <h6>
+                    People who use our service may have uploaded your contact information to Facebook. Learn more.
+        
+        By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.
+                </h6>
+            </p>
+            <button><strong>Submit</strong></button>
+            <p>Already have an account?</p>
+            </form>
+        </div>
     </div>
 </body>
 </html>
