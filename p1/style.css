@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+}
+.container{
+    width: 100%;
+    margin: auto;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: cadetblue;
+    color: white;
+    padding: 10px;
+}
+li{
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px;
+}
