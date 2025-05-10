@@ -54,22 +54,24 @@ header a {
 }
 .rows {
   display: flex;
-  background: linear-gradient(135deg, rgb(107, 166, 168), rgb(216, 240, 241));
+  background: linear-gradient(135deg, rgb(240, 250, 250), rgb(200, 230, 231));
   justify-content: space-around;
   height: 400px;
   align-items: center;
   justify-content: center;
+  margin-top: 30px;
 }
 .boxes {
-  background-color: rgb(107, 166, 168);
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: black;
   width: 400px;
   height: 300px;
   padding: 10px;
-  margin: 10px;
-  border: 1px solid white;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 0 8px rgba(107, 166, 168, 0.2);
+  margin: 40px;
+  border: none;
+   border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 0 8px rgba(107, 166, 168, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   align-items: center;
 }
 .b1{
@@ -77,4 +79,18 @@ header a {
     border-radius: 10px;
     margin-bottom: 10px;
     align-items: center;
+    background-color: cadetblue;
+    color: white;
 }
+.projects-section {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+
