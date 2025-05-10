@@ -69,6 +69,7 @@ header a {
   margin: 10px;
   border: 1px solid white;
   border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 0 8px rgba(107, 166, 168, 0.2);
   align-items: center;
 }
 .b1{
