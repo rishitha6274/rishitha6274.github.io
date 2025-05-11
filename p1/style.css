@@ -11,6 +11,8 @@ header {
   background-color: rgb(122, 187, 189);
   color: white;
   padding: 10px;
+  position: sticky;
+  top: 0;
 }
 header li {
   display: inline-block;
