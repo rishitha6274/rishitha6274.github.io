@@ -8,19 +8,19 @@ body {
    
   @media only screen and (max-width: 600px) {
     body {
-      background-color: cadetblue;
+      background-color:rosybrown;
       width: 100%;
     }
   }
   @media only screen and (min-width: 600px) {
     body {
-      background-color: rgb(131, 180, 181);
+      background-color: pink;
       width: 50%;
     }
   }
   @media only screen and (min-width: 1000px) {
     body {
-      background-color: rgb(154, 169, 169);
+      background-color: thistle;
       width: 25%;
     }
   }
