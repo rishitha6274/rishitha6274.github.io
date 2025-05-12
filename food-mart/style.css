@@ -32,6 +32,8 @@
 }
 select{
     padding: 5px;
+    appearance: none;       
+    -webkit-appearance: none;
 }
 .search-input{
     margin-left: 15px;
