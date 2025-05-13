@@ -7,6 +7,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: rgb(123, 122, 122);
 }
 
 .container {
@@ -17,6 +18,7 @@ body {
   background: #f5f5f5;
   padding: 40px;
   border-radius: 12px;
+  background: linear-gradient(to right, #a9cfcf, #f5fbfb);
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -29,21 +31,21 @@ body {
 input, button {
   padding: 12px;
   margin-bottom: 15px;
-  border: 2px solid black;
+  border: 2px solid rgb(64, 121, 123);
   border-radius: 8px;
   font-size: 1.2em;
   font-weight: bold;
 }
 
 button {
-  background-color: black;
+  background-color: cadetblue;
   color: white;
   border-radius: 20px;
   transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: #333;
+  background-color: rgb(57, 114, 116);
   transform: scale(1.05);
 }
 
@@ -51,4 +53,5 @@ button:hover {
   font-size: 1.2em;
   font-weight: bold;
   line-height: 1.8;
+  color: c;
 }
