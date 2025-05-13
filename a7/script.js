@@ -1,4 +1,4 @@
-let resultHTML = ''; // Global variable to store result HTML
+let resultHTML = ''; 
 
 const addition = (a, b) => a + b;
 const subtraction = (a, b) => a - b;
@@ -17,7 +17,6 @@ const getresult = () => {
     `;
   
 
- 
   document.getElementById('output').innerHTML = '';
 };
 
