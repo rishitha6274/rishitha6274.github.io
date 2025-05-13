@@ -2,66 +2,53 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background: rgb(101, 101, 101);
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: flex-start;
+  background: #f5f5f5;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
 }
 
 .login {
-  width: 90%;
-  max-width: 500px;
-  height: 500px;
-  margin: 60px auto;
-  padding: 30px 20px;
-  text-align: center;
-  border-radius: 10px;
-  background: linear-gradient(to right, #a9cfcf, #f5fbfb);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  transition: background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
 }
 
 input, button {
-  width: 90%;
-  padding: 12px 14px;
-  margin: 12px 0;
-  border: 1px solid #ccc;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid black;
   border-radius: 8px;
-  font-size: 1em;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-  transition: all 0.2s ease-in-out;
-}
-
-input:focus {
-  outline: none;
-  border-color: cadetblue;
-  box-shadow: 0 0 5px rgb(63, 122, 124);
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 button {
-  background-color: cadetblue;
+  background-color: black;
   color: white;
-  font-weight: bold;
-  border: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: rgb(75, 141, 143);
-  transform: scale(1.02);
+  background-color: #333;
+  transform: scale(1.05);
 }
 
 #output {
-  margin-top: 25px;
+  font-size: 1.2em;
   font-weight: bold;
-  font-size: 1.1em;
-  color: #333;
-  background: #ffffffaa;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px cadetblue;
-  color: cadetblue;
-}
-
-@media only screen and (max-width: 600px) {
-  .login {
-    background: linear-gradient(to bottom right, rgb(60, 117, 119), cadetblue);
-  }
+  line-height: 1.8;
 }
