@@ -4,43 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-    #d1{
-        display: flex;
-  justify-content: center;
-  align-items: center;
-    }
-    h2{
-        justify-content: center;
-        color: dodgerblue;
-    }
-       #p1 {
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-   
-}
+    <link rel="stylesheet" href="style.css">
 
-.container {
-  width: 900px;
-  height: 600px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  overflow: hidden;
-}
-
-button {
-  background-color: green;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-    </style>
 </head>
 <body>
     <h1>Assignment 4</h1>
@@ -55,9 +20,16 @@ button {
             <hr>
             <form>
                 <p><input type="text" placeholder="First Name">
-                <input type="text" placeholder="Last Name"></p>
-                <h4><label for="">Date of birth?</label>
-                <p><input type="date"></p></h4>
+                <input type="text" placeholder="Surname"></p>
+                <h4><div class="dob-container">
+  <label for="dob-day">Date of birth ? 
+  </label>
+  <div class="select-group">
+    <select id="dob-day"></select>
+    <select id="dob-month"></select>
+    <select id="dob-year"></select>
+  </div>
+</div></label>
                 <h4>Gender</h4>
                 <p><input type="radio">Male
                 <input type="radio">Female
@@ -67,14 +39,14 @@ button {
             <p>
                 <h6>
                     People who use our service may have uploaded your contact information to Facebook. Learn more.
-        
         By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.
                 </h6>
             </p>
             <button><strong>Submit</strong></button>
-            <p>Already have an account?</p>
+            <a href="">Already have an account?</a>
             </form>
         </div>
     </div>
+     <script src="script.js"></script>
 </body>
 </html>

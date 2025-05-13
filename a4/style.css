@@ -1,0 +1,56 @@
+#d1{
+        display: flex;
+  justify-content: center;
+  align-items: center;
+    }
+    h2{
+        justify-content: center;
+        color: dodgerblue;
+    }
+       #p1 {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   
+}
+
+.container {
+  width: 900px;
+  height: 600px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+}
+
+button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.select-group {
+  display: flex;
+  gap: 10px;
+}
+
+select {
+  padding: 8px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  appearance: none;
+  background-color: #fff;
+  
+}
