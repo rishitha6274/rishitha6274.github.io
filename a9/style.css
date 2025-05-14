@@ -1,64 +1,81 @@
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   padding-top: 50px;
-  background-color: #e3e2e2;
+  background-color: #f0f2f5;
+  margin: 0;
 }
+
 
 .container {
   text-align: center;
-  justify-content: center;
-}
-.box{
-    margin:70px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    padding: 10px;
-    height: 500px;
-    width: 400px;
-    background: linear-gradient(to right, #a9cfcf, #f5fbfb);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
-input, button {
-  font-size: 24px;
-  font-weight: bold;
-  padding: 10px 20px;
-  margin: 10px;
-  border: 3px solid rgb(128, 186, 188);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
+.box {
+  margin: 40px;
+  border: 1px solid #d0d0d0;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  height: auto;
+  width: 420px;
+  background: linear-gradient(to right, #b5d9d9, #f9fefe);
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: scale(1.02);
+}
+
+
+input,
+button {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 20px;
+  margin: 12px 0;
+  border: 2px solid #80babd;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   outline: none;
+  transition: all 0.3s ease;
 }
 
 input {
-  width: 200px;
-  color: cadetblue;
+  width: 240px;
+  color: #2f6d6f;
 }
 
+
 button {
-  border-radius: 20px;
+  border-radius: 25px;
   cursor: pointer;
-  background-color: white;
-  color: cadetblue;
+  background-color: #ffffff;
+  color: #2f6d6f;
 }
 
 button:hover {
-  background-color: cadetblue;
-  color: white;
+  background-color: #2f6d6f;
+  color: #ffffff;
 }
+
 
 ol {
   list-style-type: decimal;
-  padding: 0;
+  padding-left: 20px;
   margin-top: 20px;
 }
 
 li {
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 22px;
+  font-weight: 600;
   margin: 10px 0;
-  color: cadetblue;
+  color: #2f6d6f;
 }
