@@ -17,7 +17,7 @@ months.forEach((month, i) => {
 
 const yearSelect = document.getElementById('dob-year');
 const currentYear = new Date().getFullYear();
-for (let i = currentYear; i >= 1900; i--) {
+for (let i = currentYear; i >= 1950; i--) {
   yearSelect.innerHTML += `<option value="${i}">${i}</option>`;
 }
 

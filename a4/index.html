@@ -8,41 +8,42 @@
 
 </head>
 <body>
-    <h1>Assignment 4</h1>
     <div id="d1">
-        <h2>facebook</h2>
+        <h1>facebook</h1>
     </div>
 
     <div id="p1">
         <div class="container">
-            <h3>Create a new account</h3>
-            <h6>It's quick and easy.</h6>
+            <h2>Create a new account</h2>
+            <h6 style="color: gray;">It's quick and easy.</h6>
             <hr>
             <form>
                 <p><input type="text" placeholder="First Name">
                 <input type="text" placeholder="Surname"></p>
                 <h4><div class="dob-container">
-  <label for="dob-day">Date of birth ? 
+  <label for="dob-day" style="color: gray;">Date of birth ? 
   </label>
   <div class="select-group">
     <select id="dob-day"></select>
     <select id="dob-month"></select>
     <select id="dob-year"></select>
   </div>
-</div></label>
-                <h4>Gender</h4>
-                <p><input type="radio">Male
-                <input type="radio">Female
-            <input type="radio">Custom</p>
-            <p><input type="number" placeholder="Mobile Number or email address"></p>
-            <p><input type="password" placeholder="Password"></p>
+
+                <h4 style="color: gray;">Gender?</h4>
+                <div class="gender-type">
+                    <label class="gender-box"><input type="radio" name="gender" class="gender">Male</label>
+                    <label class="gender-box"><input type="radio" name="gender" class="gender">Female</label>
+                                <label class="gender-box"><input type="radio" name="gender">Custom</label>
+                </div>
+            <p><input type="number" class="email" placeholder="Mobile Number or email address"></p>
+            <p><input type="password" class="password" placeholder="Password"></p>
             <p>
-                <h6>
-                    People who use our service may have uploaded your contact information to Facebook. Learn more.
+                <h5 style="color: gray;">
+                    <p>People who use our service may have uploaded your contact information to Facebook.Learn more.</p>
         By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.
-                </h6>
+                </h5>
             </p>
-            <button><strong>Submit</strong></button>
+            <button><strong>Sign Up</strong></button> <br><br>
             <a href="">Already have an account?</a>
             </form>
         </div>
