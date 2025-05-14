@@ -4,7 +4,7 @@ const calculate = (operator) => {
   let result;
 
   if (isNaN(num1) || isNaN(num2)) {
-    result = "Please enter valid numbers.";
+    result = "enter valid numbers.";
   } else {
     switch (operator) {
       case '+':
