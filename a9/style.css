@@ -4,58 +4,63 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 50px;
-  background-color: #f0f2f5;
+  padding-top: 60px;
+  background: linear-gradient(to right, #e6f0f0, #fdfefe);
   margin: 0;
+  min-height: 100vh;
 }
 
 
 .container {
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
 
 
 .box {
   margin: 40px;
-  border: 1px solid #d0d0d0;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  height: auto;
+  border: none;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  padding: 35px 30px;
   width: 420px;
-  background: linear-gradient(to right, #b5d9d9, #f9fefe);
-  transition: transform 0.3s ease;
+  background: linear-gradient(145deg, #cbe7e7, #f7fdfd);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .box:hover {
   transform: scale(1.02);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
 }
-
 
 input,
 button {
   font-size: 18px;
   font-weight: 600;
-  padding: 12px 20px;
+  padding: 14px 20px;
   margin: 12px 0;
-  border: 2px solid #80babd;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  border: 2px solid #7fbfc2;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
   outline: none;
   transition: all 0.3s ease;
 }
 
 input {
-  width: 240px;
+  width: 260px;
   color: #2f6d6f;
+  background-color: #ffffff;
+  transition: box-shadow 0.3s ease;
 }
 
+input:focus {
+  box-shadow: 0 0 0 3px rgba(128, 186, 188, 0.3);
+}
 
 button {
-  border-radius: 25px;
+  border-radius: 30px;
   cursor: pointer;
   background-color: #ffffff;
   color: #2f6d6f;
@@ -66,16 +71,25 @@ button:hover {
   color: #ffffff;
 }
 
-
 ol {
   list-style-type: decimal;
   padding-left: 20px;
-  margin-top: 20px;
+  margin-top: 24px;
+  width: 100%;
+  text-align: left;
 }
 
 li {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   margin: 10px 0;
+  padding: 8px 12px;
   color: #2f6d6f;
+  background-color: #eaf7f7;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #d8eeee;
 }
