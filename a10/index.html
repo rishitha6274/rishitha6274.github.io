@@ -4,87 +4,76 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Product Cards</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      margin: 0;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      color: cadetblue;
-      font-size: 32px;
-      margin-bottom: 30px;
-    }
-
-    .product-container {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-
-    .card {
-      width: 180px;
-      border: 2px solid black;
-      border-radius: 6px;
-      overflow: hidden;
-      background-color: #fff;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .card img {
-      width: 100%;
-      height: 100px;
-      object-fit: cover;
-      border-bottom: 2px solid black;
-    }
-
-    .card-content {
-      padding: 10px;
-      text-align: center;
-    }
-
-    .product-name {
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    .product-price {
-      font-size: 16px;
-      margin-top: 6px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Product List</h1>
+  <h1>Fruits List</h1>
+
+  
+  <div class="input-form">
+    <input type="text" id="pid" placeholder="ID" />
+    <input type="text" id="pname" placeholder="Name" />
+    <input type="number" id="pprice" placeholder="Price" />
+    <input type="text" id="pimg" placeholder="Image URL" />
+    <button onclick="addProduct()">Add</button>
+  </div>
+
+  
   <div class="product-container" id="productContainer"></div>
 
   <script>
     const products = [
-      { id: 1, name: "Apple", price: 250, imgUrl: "Download AI generated Red Apple Isolated on Transparent Background for free.jpg" },
+     { id: 1, name: "Apple", price: 250, imgUrl: "Download AI generated Red Apple Isolated on Transparent Background for free.jpg" },
       { id: 2, name: "Orange", price: 100, imgUrl: "Orange Fruit PNG Images,  Orange Clipart, Fruit Clipart, Orange PNG Transparent Background - Pngtree.jpg" },
-      { id: 3, name: "Mango", price: 80, imgUrl: "Mango.jpg" }
+      { id: 3, name: "Mango", price: 80, imgUrl: "Mango.jpg" },
     ];
 
     const container = document.getElementById("productContainer");
 
-    products.forEach(product => {
-      const card = document.createElement("div");
-      card.className = "card";
+    function renderProducts() {
+      container.innerHTML = "";
+      products.forEach(product => {
+        container.innerHTML += `
+          <div class="card">
+            <img src="${product.imgUrl}" alt="${product.name}"/>
+            <h2>${product.name}</h2>
+            <h3>${product.price}</h3>
+          </div>`;
+      });
+    }
 
-      card.innerHTML = `
-        <img src="${product.imgUrl}" alt="${product.name}" />
-        <div class="card-content">
-          <div class="product-name">${product.name}</div>
-          <div class="product-price">${product.price}</div>
-        </div>
-      `;
+    function addProduct() {
+      const id = document.getElementById("pid").value;
+      const name = document.getElementById("pname").value;
+      const price = document.getElementById("pprice").value;
+      const imgUrl = document.getElementById("pimg").value;
 
-      container.appendChild(card);
-    });
+      if (!id || !name || !price || !imgUrl) {
+        alert("Please fill all fields.");
+        return;
+      }
+
+      products.push({
+        id: parseInt(id),
+        name,
+        price: parseFloat(price),
+        imgUrl
+      });
+
+      renderProducts();
+
+      
+      document.getElementById("pid").value = "";
+      document.getElementById("pname").value = "";
+      document.getElementById("pprice").value = "";
+      document.getElementById("pimg").value = "";
+    }
+
+    renderProducts();
   </script>
 </body>
 </html>
+
+
+
+
