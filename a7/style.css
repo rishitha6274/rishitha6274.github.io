@@ -2,58 +2,83 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background: #fff;
+  background: linear-gradient(to right, #7b7a7a, #a0a0a0);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: rgb(123, 122, 122);
 }
+
 
 .container {
   display: flex;
   flex-direction: row;
   gap: 40px;
   align-items: flex-start;
-  background: #f5f5f5;
-  padding: 40px;
-  border-radius: 12px;
-  background: linear-gradient(to right, #a9cfcf, #f5fbfb);
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(145deg, #b5d9d9, #f8fcfc);
+  padding: 50px 60px;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
 }
+
+.container:hover {
+  transform: scale(1.01);
+}
+
 
 .login {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  width: 280px;
 }
 
+
 input, button {
-  padding: 12px;
-  margin-bottom: 15px;
+  padding: 14px 18px;
+  margin-bottom: 18px;
   border: 2px solid rgb(64, 121, 123);
-  border-radius: 8px;
-  font-size: 1.2em;
-  font-weight: bold;
+  border-radius: 10px;
+  font-size: 1.1em;
+  font-weight: 600;
+  outline: none;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
+
+
+input {
+  background-color: #ffffff;
+  color: #2f6d6f;
+}
+
+input:focus {
+  box-shadow: 0 0 0 3px rgba(64, 121, 123, 0.2);
+}
+
 
 button {
   background-color: cadetblue;
   color: white;
-  border-radius: 20px;
-  transition: all 0.3s ease;
+  border-radius: 25px;
+  cursor: pointer;
 }
 
 button:hover {
   background-color: rgb(57, 114, 116);
   transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
 }
+
 
 #output {
   font-size: 1.2em;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.8;
-  color: cadetblue;
+  color: #2f6d6f;
+  max-width: 300px;
+  background-color: #eaf7f7;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-
-
