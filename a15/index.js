@@ -8,8 +8,6 @@ async function dispData() {
   console.log(data);
   greet()
 }
-function greet(){
-  console.log("Hello World")
-}
+
 dispData();
  
