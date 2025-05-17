@@ -1,6 +1,10 @@
 function add(x, y) {
     return new Promise((resolve, reject) => {
-        resolve(x + y);
+        if (x < 5) {
+            reject("x is less than 5");
+        } else {
+            resolve(x + y);
+        }
     });
 }
 
@@ -13,7 +17,7 @@ async function main() {
         let result = sqr(sum);
         console.log(result);
     } catch (error) {
-        console.error(error);
+        console.log(error);
     }
 }
 main()
