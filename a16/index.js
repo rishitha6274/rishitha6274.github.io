@@ -1,7 +1,6 @@
 function add(x, y) {
     return new Promise((resolve, reject) => {
         resolve(x + y);
-        //reject("some error")
     });
 }
 
