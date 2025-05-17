@@ -17,7 +17,7 @@ async function main() {
         let result = sqr(sum);
         console.log(result);
     } catch (error) {
-        console.log(error);
+        console.error(error);
     }
 }
 main()
