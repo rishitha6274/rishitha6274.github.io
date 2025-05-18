@@ -42,7 +42,7 @@ const dispCart = () => {
   root.innerHTML = str
     ? `
       <div class="row">${str}</div>
-      <div class="grand-total-box">
+      <div class="totalprice-box">
         <h3>Total order price: $${Totalprice}</h3>
       </div>
     `
