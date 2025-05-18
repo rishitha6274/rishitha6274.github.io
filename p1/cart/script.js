@@ -17,21 +17,28 @@ const dispCart = () => {
   let str = "";
   for (let id in cart) {
     const item = products.find(p => p.id == id);
+    const qty = cart[id];
+    const total = item.price * qty;
+
     str += `
       <div class="product-box">
         <h3>${item.name}</h3>
         <p>Price: $${item.price}</p>
-        
+
         <div class="qty-controls">
           <button onclick='decreaseQty(${id})'>−</button>
-          <span>${cart[id]}</span>
+          <span>${qty}</span>
           <button onclick='increaseQty(${id})'>+</button>
         </div>
+
+        <p><strong>Total amount: $${total}</strong></p>
       </div>
     `;
   }
+
   root.innerHTML = str ? `<div class="row">${str}</div>` : "<p>Your cart is empty.</p>";
 };
+
 
 const increaseQty = (id) => {
   cart[id] = (cart[id] || 0) + 1;
