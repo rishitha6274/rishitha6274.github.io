@@ -31,13 +31,35 @@ const dispCart = () => {
 const showProducts = () => {
   let str = "";
   products.map(value => {
+    const qty = cart[value.id] || 0;
+
     str += `
       <div class="product-box">
         <h3>${value.name}</h3>
         <h4>$${value.price}</h4>
+
+        <div class="qty-controls">
+          <button onclick='decreaseQty(${value.id})'>−</button>
+          <span>${qty}</span>
+          <button onclick='increaseQty(${value.id})'>+</button>
+        </div>
+
         <button onclick='addToCart(${value.id})'>Add to Cart</button>
       </div>
     `;
   });
   root.innerHTML = "<div class='row'>" + str + "</div>";
+};
+
+const increaseQty = (id) => {
+  cart[id] = (cart[id] || 0) + 1;
+  showProducts();
+};
+
+const decreaseQty = (id) => {
+  if (cart[id]) {
+    cart[id]--;
+    if (cart[id] === 0) delete cart[id];
+  }
+  showProducts();
 };

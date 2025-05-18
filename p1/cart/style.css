@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #f0f4f8, #eaf6fb); /* soft gray-blue gradient */
+  background: linear-gradient(to bottom right, #f0f4f8, #eaf6fb); 
   color: #2c3e50;
   line-height: 1.6;
 }
@@ -16,7 +16,7 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background: linear-gradient(to right, #c9d6ff, #e2e2e2); /* ice gray to light blue */
+  background: linear-gradient(to right, #c9d6ff, #e2e2e2); 
   color: #1c1c1c;
   padding: 1.2rem 2rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
@@ -82,9 +82,38 @@ main {
   justify-content: center;
   gap: 2rem;
 }
+.qty-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
 
+.qty-controls button {
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  background-color: #cdb4db;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.qty-controls button:hover {
+  background-color: #b197c4;
+}
+
+.qty-controls span {
+  min-width: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+}
 button {
-  background-color: #5dade2; /* soft sky blue */
+  background-color: #cdb4db;
   color: white;
   border: none;
   padding: 0.6rem 1.2rem;
@@ -96,12 +125,12 @@ button {
 }
 
 button:hover {
-  background-color: #3498db;
+  background-color: #b197c4;
   transform: scale(1.05);
 }
 
 footer {
-  margin-top: 24rem;
+  margin-top: 20rem;
   background: linear-gradient(to right, #c9d6ff, #e2e2e2);
   color: #333;
   padding: 1.2rem;
