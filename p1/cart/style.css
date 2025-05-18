@@ -11,19 +11,12 @@ body {
   line-height: 1.6;
 }
 
- footer {
-  background: linear-gradient(to right, #5f9ea0, #7fb3b8); 
-  color: white;
-  padding: 1.2rem;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
 header {
   display: flex;
-  justify-content: space-between; 
-  align-items: center; 
-  background: linear-gradient(to right, #5f9ea0, #7fb3b8); 
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: linear-gradient(to right, #5f9ea0, #7fb3b8);
   color: white;
   padding: 1.2rem 2rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -31,6 +24,7 @@ header {
 
 header h1 {
   margin: 0;
+  font-size: 1.8rem;
 }
 
 header ul {
@@ -39,15 +33,29 @@ header ul {
   gap: 2rem;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
+}
+
+header ul li {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+header ul li:hover {
+  color: #e0f2f1;
 }
 
 main {
+  margin-top: 2rem;
+}
+
+#root {
   display: flex;
   justify-content: center;
   gap: 2rem;
   padding: 3rem 2rem;
-  flex-wrap: nowrap; 
-  overflow-x: auto;  
+  flex-wrap: wrap;
+  overflow-x: hidden;
   max-width: 100%;
 }
 
@@ -60,14 +68,19 @@ main {
   min-width: 240px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
-  flex-shrink: 0; 
+  flex-shrink: 0;
 }
 
 .product-box:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 24px rgba(95, 158, 160, 0.2);
 }
-
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
 button {
   background-color: #5f9ea0;
   color: white;
@@ -86,18 +99,29 @@ button:hover {
 }
 
 footer {
-  margin-top: 18rem;
+  margin-top: 4rem;
   background: linear-gradient(to right, #5f9ea0, #7fb3b8);
   color: white;
+  padding: 1.2rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 
-#root {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 3rem 2rem;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  max-width: 100%;
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  header ul {
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  #root {
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
 }

@@ -4,25 +4,40 @@ const products = [
   { id: 3, name: "p3", price: 75 },
 ];
 
-const cart = {};
+let cart = {};
 
-const showProducts = () => {
-  const root = document.getElementById("root");
-  root.innerHTML = "";
-
-  products.forEach((product) => {
-    const productBox = document.createElement("div");
-    productBox.className = "product-box";
-
-    productBox.innerHTML = `
-      <h3>${product.name}</h3>
-      <p>Price: $${product.price}</p>
-      <button onclick="addToCart(${product.id})">Add to Cart</button>
-    `;
-
-    root.appendChild(productBox);
-  });
+const addToCart = (id) => {
+  if (!(id in cart)) {
+    cart = { ...cart, [id]: 1 }; 
+  }
+  console.log(cart);
 };
 
+const dispCart = () => {
+  let str = "";
+  for (let id in cart) {
+    const item = products.find(p => p.id == id);
+    str += `
+      <div class="product-box">
+        <h3>${item.name}</h3>
+        <p>Price: $${item.price}</p>
+        <p>Qty: ${cart[id]}</p>
+      </div>
+    `;
+  }
+  root.innerHTML = str ? `<div class="row">${str}</div>` : "<p>Your cart is empty.</p>";
+};
 
-
+const showProducts = () => {
+  let str = "";
+  products.map(value => {
+    str += `
+      <div class="product-box">
+        <h3>${value.name}</h3>
+        <h4>$${value.price}</h4>
+        <button onclick='addToCart(${value.id})'>Add to Cart</button>
+      </div>
+    `;
+  });
+  root.innerHTML = "<div class='row'>" + str + "</div>";
+};
