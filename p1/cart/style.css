@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #e0f7fa, #f0f4f8);
+  color: #333;
+  line-height: 1.6;
+}
+
+header, footer {
+  background: linear-gradient(to right, #5f9ea0, #7fb3b8); 
+  color: white;
+  padding: 1.2rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+header ul li {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+header ul li:hover {
+  color: #e0f2f1;
+}
+
+main {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.product-box {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(95, 158, 160, 0.1);
+  padding: 1.5rem;
+  width: 240px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.product-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(95, 158, 160, 0.2);
+}
+
+button {
+  background-color: #5f9ea0;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #4a8789;
+  transform: scale(1.05);
+}
+
+footer {
+  margin-top: 2rem;
+  background: linear-gradient(to right, #5f9ea0, #7fb3b8);
+  color: white;
+}
+
+.cart-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 1rem;
+  background: #f9f9f9;
+  border: 1px solid #cfd8dc;
+  padding: 1rem;
+  width: 270px;
+  box-shadow: 0 8px 16px rgba(95, 158, 160, 0.15);
+  border-radius: 12px;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.cart-dropdown h4 {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #37474f;
+}
+
+.cart-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-dropdown li {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(95, 158, 160, 0.05);
+  font-size: 0.9rem;
+  color: #37474f;
+}
+
+#cart-toggle {
+  cursor: pointer;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
