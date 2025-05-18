@@ -11,4 +11,4 @@ const total = products.reduce((sum, value)=>{
   return sum + value.price * qty;
 },0);
 
-console.log(total)
+console.log("Total is "+total)
