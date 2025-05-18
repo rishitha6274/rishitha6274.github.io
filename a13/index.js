@@ -11,11 +11,11 @@ const products = [
 //   price: product.price + 5,
 // }));
 
-let filteredproduct = qty.filter((value) => value > 2);
-const totalPrice = list.reduce((sum, product) => sum + product.price, 0);
+let filteredProducts = products.filter(product => product.qty > 2);
+const totalPrice = products.reduce((sum, product) => sum + product.price, 0);
 
-list.forEach(product => {
+products.forEach(product => {
   console.log(`${product.name}: ${product.price}`);
-  console.log("status "+product.status);
-  console.log("Total Price "+totalPrice);
+  console.log("Status: " + product.status);
+  console.log("Total Price: " + totalPrice);
 });
