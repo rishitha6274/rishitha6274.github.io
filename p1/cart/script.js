@@ -1,7 +1,7 @@
 const products = [
-  { id: 1, name: "p1", price: 34 },
-  { id: 2, name: "p2", price: 50 },
-  { id: 3, name: "p3", price: 75 },
+  { id: 1, name: "Product 1", price: 34 },
+  { id: 2, name: "Product 2", price: 50 },
+  { id: 3, name: "Product 3", price: 75 },
 ];
 
 let cart = {};
