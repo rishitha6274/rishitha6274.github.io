@@ -11,7 +11,7 @@ body {
   line-height: 1.6;
 }
 
-header, footer {
+ footer {
   background: linear-gradient(to right, #5f9ea0, #7fb3b8); 
   color: white;
   padding: 1.2rem;
@@ -19,21 +19,26 @@ header, footer {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  background: linear-gradient(to right, #5f9ea0, #7fb3b8); 
+  color: white;
+  padding: 1.2rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+}
+
 header ul {
   list-style: none;
   display: flex;
-  justify-content: center;
   gap: 2rem;
-  margin-top: 0.5rem;
-}
-
-header ul li {
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-header ul li:hover {
-  color: #e0f2f1;
+  margin: 0;
+  padding: 0;
 }
 
 main {
