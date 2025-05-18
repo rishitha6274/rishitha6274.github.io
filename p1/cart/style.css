@@ -87,7 +87,7 @@ main {
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  margin-bottom: 0.8rem;
+  margin-top: 0.8rem;
 }
 
 .qty-controls button {
@@ -112,6 +112,7 @@ main {
   font-weight: bold;
   font-size: 1rem;
 }
+
 button {
   background-color: #cdb4db;
   color: white;
