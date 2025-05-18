@@ -15,10 +15,13 @@ const addToCart = (id) => {
 
 const dispCart = () => {
   let str = "";
+  let grandTotal = 0;
+
   for (let id in cart) {
     const item = products.find(p => p.id == id);
     const qty = cart[id];
     const total = item.price * qty;
+    grandTotal += total;
 
     str += `
       <div class="product-box">
@@ -31,13 +34,21 @@ const dispCart = () => {
           <button onclick='increaseQty(${id})'>+</button>
         </div>
 
-        <p><strong>Total amount: $${total}</strong></p>
+        <p><strong>Total: $${total}</strong></p>
       </div>
     `;
   }
 
-  root.innerHTML = str ? `<div class="row">${str}</div>` : "<p>Your cart is empty.</p>";
+  root.innerHTML = str
+    ? `
+      <div class="row">${str}</div>
+      <div class="grand-total-box">
+        <h3>Total order price: $${grandTotal}</h3>
+      </div>
+    `
+    : "<p>Your cart is empty.</p>";
 };
+
 
 
 const increaseQty = (id) => {

@@ -112,7 +112,13 @@ main {
   font-weight: bold;
   font-size: 1rem;
 }
-
+.grand-total-box {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4a4a4a;
+}
 button {
   background-color: #cdb4db;
   color: white;
