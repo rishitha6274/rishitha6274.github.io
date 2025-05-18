@@ -34,7 +34,7 @@ const dispCart = () => {
           <button onclick='increaseQty(${id})'>+</button>
         </div>
 
-        <p><strong>Total: $${total}</strong></p>
+        <p><strong>Value: $${total}</strong></p>
       </div>
     `;
   }
