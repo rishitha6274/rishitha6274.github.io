@@ -40,13 +40,15 @@ const dispCart = () => {
   }
 
   root.innerHTML = str
-    ? `
+  ? `
+    <div class="cart-container">
       <div class="row">${str}</div>
       <div class="totalprice-box">
         <h3>Total order price: $${Totalprice}</h3>
       </div>
-    `
-    : "<p>Your cart is empty.</p>";
+    </div>
+  `
+  : "<p>Your cart is empty.</p>";
 };
 
 
