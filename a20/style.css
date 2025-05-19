@@ -1,4 +1,4 @@
-* {
+ * {
       box-sizing: border-box;
     }
 
@@ -12,16 +12,18 @@
       margin: 0;
       padding: 1rem;
     }
+
     h1 {
-  font-size: 1.5rem;
-  font-family: 'Times New Roman', Times, serif;
-  color: #1e7fac; 
-  margin-bottom: 1.5rem;
-  font-weight: bold;
-}
+      font-size: 1.75rem;
+      font-family: 'Times New Roman', Times, serif;
+      color: #1e7fac;
+      margin-bottom: 1.5rem;
+      font-weight: bold;
+    }
+
     .container {
       background: #ffffff;
-      border-radius: 16px;
+      border-radius: 20px;
       padding: 2.5rem;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
       width: 100%;
@@ -75,13 +77,27 @@
       transform: translateY(-2px);
     }
 
-    .result {
-      font-size: 1.25rem;
-      font-family: 'Times New Roman', Times, serif;
-      font-weight: 600;
-      color: #1e293b;
-      margin-top: 1rem;
-    }
+    .result-card {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  margin-top: 1rem;
+  text-align: center; 
+}
+
+.result-card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.result-card p {
+  margin: 0.4rem 0;
+  font-size: 1.1rem;
+  color: #334155;
+}
 
     .error {
       color: #ef4444;
@@ -89,4 +105,3 @@
       font-weight: 500;
       margin-top: 1rem;
     }
-
