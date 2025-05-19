@@ -11,7 +11,7 @@ function handleLogin() {
   const user = customers.find(c => c.card === card && c.pin === pin);
 
   if (user) {
-    document.body.innerHTML = `<h1 style="text-align:center; margin-top: 6vh;">Welcome ${user.name}</h1>`;
+    document.body.innerHTML = `<h1 style="text-align:center; margin-top: 6vh;">Welcome ${user.name}!</h1>`;
   } else {
     errorDiv.textContent = "Invalid card number or PIN.";
   }

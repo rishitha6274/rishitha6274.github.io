@@ -1,6 +1,6 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #dbeafe, #f0f9ff);
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom right, #fdfbfb, #ebedee);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,56 +13,62 @@ body {
 }
 
 h1 {
-  margin-bottom: 5rem;
-  font-size: 2rem;
-  color: #0f172a;
+  margin-bottom: 4rem;
+  font-size: 2.5rem;
+  color: #334155;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .atm-container {
-  background: #ffffff;
+  background: linear-gradient(to bottom right, #ffffff, #f8fafc);
   padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
   text-align: center;
   width: 100%;
   max-width: 400px;
-  transition: box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .atm-container:hover {
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
 }
 
 input {
   width: 100%;
-  padding: 0.75rem 0.75rem;
+  padding: 0.8rem 1rem;
   margin: 1rem 0;
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
   font-size: 1rem;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f9fafb;
+  transition: all 0.3s ease;
 }
 
 input:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  border-color: #a5b4fc;
+  box-shadow: 0 0 0 3px rgba(165, 180, 252, 0.4);
   outline: none;
+  background-color: #ffffff;
 }
 
 button {
-  padding: 0.75rem 1.5rem;
-  background-color: #3b82f6;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(to right, #93c5fd, #60a5fa);
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   color: white;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-  background-color: #2563eb;
+  background: linear-gradient(to right, #60a5fa, #3b82f6);
   transform: translateY(-2px);
 }
 
@@ -71,7 +77,22 @@ button:active {
 }
 
 .error {
-  color: #dc2626;
+  color: #f43f5e;
   font-size: 0.9rem;
   margin-top: 1rem;
+}
+
+.atm-container {
+  animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
