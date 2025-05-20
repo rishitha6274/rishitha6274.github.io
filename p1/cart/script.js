@@ -11,6 +11,12 @@ const addToCart = (id) => {
     cart = { ...cart, [id]: 1 }; 
   }
   console.log(cart);
+
+  const msg = document.getElementById(`added-msg-${id}`);
+  if (msg) {
+    msg.classList.add("show");
+    setTimeout(() => msg.classList.remove("show"), 1500); 
+  }
 };
 
 const dispCart = () => {
@@ -70,10 +76,11 @@ const showProducts = () => {
   let str = "";
   products.map(value => {
     str += `
-      <div class="product-box">
+      <div class="product-box" id="product-${value.id}">
         <h3>${value.name}</h3>
         <h4>$${value.price}</h4>
         <button onclick='addToCart(${value.id})'>Add to Cart</button>
+        <div class="added-msg" id="added-msg-${value.id}">✔ Added to cart</div>
       </div>
     `;
   });

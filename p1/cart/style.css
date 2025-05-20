@@ -169,3 +169,19 @@ footer {
     padding: 2rem 1rem;
   }
 }
+
+
+.added-msg {
+  display: none;
+  margin-top: 0.5rem;
+  color: #b197c4;
+  font-weight: bold;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.added-msg.show {
+  display: block;
+  opacity: 1;
+}
