@@ -17,16 +17,22 @@ function handleLogin() {
   if (user) {
     document.body.innerHTML = `
       <div class="welcome-screen">
-        <h1>Welcome ${user.name}!</h1>
+        <h1 class="fade-in-right">Welcome ${user.name}!</h1>
         <p><strong>Current Balance:</strong> ₹<span id="balanceAmount">${user.balance.toFixed(2)}</span></p>
         <div class="options-panel">
           <label for="actionSelect">Select Action:</label>
-          <select id="actionSelect">
+          <select id="actionSelect" onchange="showTransferFields()">
             <option value="">--Choose--</option>
             <option value="deposit">Deposit</option>
             <option value="withdraw">Withdraw</option>
+            <option value="transfer">Fund Transfer</option>
           </select>
-          <input type="number" id="amountInput" placeholder="Enter Amount" />
+          <div id="amountSection">
+            <input type="number" id="amountInput" placeholder="Enter Amount" />
+          </div>
+          <div id="transferSection" style="display: none;">
+            <input type="text" id="recipientCard" placeholder="Recipient Card Number" />
+          </div>
           <button onclick="handleTransaction('${user.card}')">Submit</button>
           <button class="exit-btn" onclick="location.reload()">Exit</button>
         </div>
@@ -38,14 +44,25 @@ function handleLogin() {
   }
 }
 
+function showTransferFields() {
+  const action = document.getElementById("actionSelect").value;
+  const transferSection = document.getElementById("transferSection");
+
+  if (action === "transfer") {
+    transferSection.style.display = "block";
+  } else {
+    transferSection.style.display = "none";
+  }
+}
+
 function handleTransaction(cardNumber) {
   const action = document.getElementById("actionSelect").value;
   const amount = parseFloat(document.getElementById("amountInput").value);
   const messageDiv = document.getElementById("resultMessage");
 
   const customers = JSON.parse(localStorage.getItem("customers"));
-  const userIndex = customers.findIndex(c => c.card === cardNumber);
-  const user = customers[userIndex];
+  const senderIndex = customers.findIndex(c => c.card === cardNumber);
+  const sender = customers[senderIndex];
 
   if (!action || isNaN(amount) || amount <= 0) {
     messageDiv.textContent = "Please select an action and enter a valid amount.";
@@ -54,21 +71,47 @@ function handleTransaction(cardNumber) {
   }
 
   if (action === "deposit") {
-    user.balance += amount;
+    sender.balance += amount;
   } else if (action === "withdraw") {
-    if (user.balance < amount) {
+    if (sender.balance < amount) {
       messageDiv.textContent = "Insufficient balance.";
       messageDiv.style.color = "#f43f5e";
       return;
     }
-    user.balance -= amount;
+    sender.balance -= amount;
+  } else if (action === "transfer") {
+    const recipientCard = document.getElementById("recipientCard").value.trim();
+    const recipientIndex = customers.findIndex(c => c.card === recipientCard);
+    const recipient = customers[recipientIndex];
+
+    if (!recipientCard || recipientCard === cardNumber) {
+      messageDiv.textContent = "Invalid recipient card number.";
+      messageDiv.style.color = "#f43f5e";
+      return;
+    }
+
+    if (recipientIndex === -1) {
+      messageDiv.textContent = "Recipient not found.";
+      messageDiv.style.color = "#f43f5e";
+      return;
+    }
+
+    if (sender.balance < amount) {
+      messageDiv.textContent = "Insufficient balance for transfer.";
+      messageDiv.style.color = "#f43f5e";
+      return;
+    }
+
+    sender.balance -= amount;
+    recipient.balance += amount;
+    customers[recipientIndex] = recipient;
   }
 
-  customers[userIndex] = user;
+  customers[senderIndex] = sender;
   localStorage.setItem("customers", JSON.stringify(customers));
 
-  document.getElementById("balanceAmount").textContent = user.balance.toFixed(2);
+  document.getElementById("balanceAmount").textContent = sender.balance.toFixed(2);
 
-  messageDiv.textContent = `Transaction successful. Updated Balance: ₹${user.balance.toFixed(2)}`;
+  messageDiv.textContent = `Transaction successful. Updated Balance: ₹${sender.balance.toFixed(2)}`;
   messageDiv.style.color = "#16a34a";
 }
