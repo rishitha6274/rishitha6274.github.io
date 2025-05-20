@@ -1,3 +1,13 @@
+
+if (!localStorage.getItem("customers")) {
+  const initialCustomers = [
+    { card: "1234567890", pin: "1234", name: "John", balance: 2000 },
+    { card: "1234567891", pin: "2345", name: "Cathy", balance: 5000 },
+  ];
+  localStorage.setItem("customers", JSON.stringify(initialCustomers));
+}
+
+
 const customers = [
   { card: "1234567890", pin: "1234", name: "John", balance: "₹2000" },
   { card: "1234567891", pin: "2345", name: "Cathy", balance: "₹5000" },
@@ -8,12 +18,14 @@ function handleLogin() {
   const pin = document.getElementById("pinInput").value.trim();
   const errorDiv = document.getElementById("errorMsg");
 
+  const customers = JSON.parse(localStorage.getItem("customers"));
   const user = customers.find(c => c.card === card && c.pin === pin);
 
   if (user) {
     document.body.innerHTML = `
       <div class="welcome-screen">
         <h1>Welcome ${user.name}!</h1>
+        <p><strong>Current Balance:</strong> ₹${user.balance.toFixed(2)}</p>
         <div class="options-panel">
           <label for="actionSelect">Select Action:</label>
           <select id="actionSelect">
@@ -33,12 +45,16 @@ function handleLogin() {
   }
 }
 
+
+
 function handleTransaction(cardNumber) {
   const action = document.getElementById("actionSelect").value;
   const amount = parseFloat(document.getElementById("amountInput").value);
   const messageDiv = document.getElementById("resultMessage");
 
-  const user = customers.find(c => c.card === cardNumber);
+  const customers = JSON.parse(localStorage.getItem("customers"));
+  const userIndex = customers.findIndex(c => c.card === cardNumber);
+  const user = customers[userIndex];
 
   if (!action || isNaN(amount) || amount <= 0) {
     messageDiv.textContent = "Please select an action and enter a valid amount.";
@@ -57,6 +73,9 @@ function handleTransaction(cardNumber) {
     user.balance -= amount;
   }
 
-  messageDiv.textContent = `Transaction successful. Updated Balance: ₹${user.balance}`;
+  customers[userIndex] = user;
+  localStorage.setItem("customers", JSON.stringify(customers));
+
+  messageDiv.textContent = `Transaction successful. Updated Balance: ₹${user.balance.toFixed(2)}`;
   messageDiv.style.color = "#16a34a";
 }
