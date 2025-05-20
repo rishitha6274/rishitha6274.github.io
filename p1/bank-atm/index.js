@@ -1,4 +1,3 @@
-
 if (!localStorage.getItem("customers")) {
   const initialCustomers = [
     { card: "1234567890", pin: "1234", name: "John", balance: 2000 },
@@ -6,12 +5,6 @@ if (!localStorage.getItem("customers")) {
   ];
   localStorage.setItem("customers", JSON.stringify(initialCustomers));
 }
-
-
-const customers = [
-  { card: "1234567890", pin: "1234", name: "John", balance: "₹2000" },
-  { card: "1234567891", pin: "2345", name: "Cathy", balance: "₹5000" },
-];
 
 function handleLogin() {
   const card = document.getElementById("cardInput").value.trim();
@@ -25,7 +18,7 @@ function handleLogin() {
     document.body.innerHTML = `
       <div class="welcome-screen">
         <h1>Welcome ${user.name}!</h1>
-        <p><strong>Current Balance:</strong> ₹${user.balance.toFixed(2)}</p>
+        <p><strong>Current Balance:</strong> ₹<span id="balanceAmount">${user.balance.toFixed(2)}</span></p>
         <div class="options-panel">
           <label for="actionSelect">Select Action:</label>
           <select id="actionSelect">
@@ -44,8 +37,6 @@ function handleLogin() {
     errorDiv.textContent = "Invalid card number or PIN.";
   }
 }
-
-
 
 function handleTransaction(cardNumber) {
   const action = document.getElementById("actionSelect").value;
@@ -75,6 +66,8 @@ function handleTransaction(cardNumber) {
 
   customers[userIndex] = user;
   localStorage.setItem("customers", JSON.stringify(customers));
+
+  document.getElementById("balanceAmount").textContent = user.balance.toFixed(2);
 
   messageDiv.textContent = `Transaction successful. Updated Balance: ₹${user.balance.toFixed(2)}`;
   messageDiv.style.color = "#16a34a";
