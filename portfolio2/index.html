@@ -1,99 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Lattupally Rishitha</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#"
-                >Home <span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
 
-      <div class="row bg-light p-5">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rishitha | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .hero-section {
+      background-color: #eaf6f6;
+      padding: 80px 20px;
+    }
+
+    .btn-info {
+      background-color: cadetblue;
+      border: none;
+    }
+
+    .btn-info:hover {
+      background-color: #69a6a6;
+    }
+
+    .project-card:hover {
+      transform: scale(1.03);
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .section-heading {
+      text-align: center;
+      margin: 60px 0 30px;
+      color: #444;
+    }
+
+    footer {
+      background-color: cadetblue;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .progress {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Lattupally Rishitha</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
         <div class="col-lg-6">
-          <h3 class="text-secondary">Hello!</h3>
-          <p class="text-secondary">
-            I'm an enthusiastic learner at the intersection of cybersecurity and
-            artificial intelligence, driven by a deep interest in using
-            technology to tackle real-world challenges. Currently pursuing a
-            B.Tech in Computer Science with a specialization in Cybersecurity.
+          <h1 class="display-5">Hello!</h1>
+          <p class="lead">
+            I'm an enthusiastic learner at the intersection of cybersecurity and artificial intelligence. Currently pursuing a B.Tech in Computer Science with a specialization in Cybersecurity.
           </p>
-          <button class="btn btn-lg btn-info text-white">Know More</button>
+          <a href="#about" class="btn btn-info btn-lg text-white">Know More</a>
         </div>
-        <div class="col-lg-6">
-          <img src="Premium Photo | Office workplace with computer and accessories in the room3D rendering.jpg" />
+        <div class="col-lg-6 text-center">
+          <img src="Premium Photo | Office workplace with computer and accessories in the room3D rendering.jpg" alt="Profile" class="img-fluid rounded shadow">
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="row bg-light">
-        <h1>Projects</h1>
-        <div class="col-lg-4">
-          <div class="bg-white m-5 p-5 rounded">Project 1
-            <p><h5>Food mart</h5></p>
-            <p>modern and user-friendly grocery store website</p>
-            <button class="btn btn-info text-white">View</button>
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-heading">Projects</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card project-card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Food Mart</h5>
+              <p class="card-text text-muted">Modern and user-friendly grocery store website.</p>
+              <a href="../food-mart/index.html" class="btn btn-info text-white">View Demo</a>
+            </div>
           </div>
         </div>
-        <div class="col-lg-4">
-          <div class="bg-white m-5 p-5 rounded">Project 2
-            <p><h5>Cart</h5></p>
-            <p>add to cart web page</p>
-            <button class="btn btn-info text-white">View</button>
+        <div class="col-md-4 mb-4">
+          <div class="card project-card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Cart</h5>
+              <p class="card-text text-muted">Add to cart web page with product listing.</p>
+              <a href="cart" class="btn btn-info text-white">View Demo</a>
+            </div>
           </div>
         </div>
-        <div class="col-lg-4">
-          <div class="bg-white m-5 p-5 rounded">Project 3
-            <p><h5>ATM</h5></p>
-            <p>Bank ATM web page</p>
-            <button class="btn btn-info text-white">View</button>
+        <div class="col-md-4 mb-4">
+          <div class="card project-card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">ATM</h5>
+              <p class="card-text text-muted">Bank ATM interface simulation.</p>
+              <a href="bank-atm" class="btn btn-info text-white">View Demo</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  </section>
+
+  <section id="services" class="bg-light">
+    <div class="container">
+      <h2 class="section-heading">Services</h2>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <div class="p-4 bg-white shadow rounded">
+            <h5 class="text-info">Web Development</h5>
+            <p>Full-stack apps using HTML, CSS, JS, Flask, and MongoDB.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white shadow rounded">
+            <h5 class="text-info">Cybersecurity</h5>
+            <p>Ethical hacking, vulnerability testing & digital safety.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white shadow rounded">
+            <h5 class="text-info">AI / ML</h5>
+            <p>Models using Python, TensorFlow & OpenCV.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="section-heading">About Me</h2>
+      <p class="lead text-center">
+        Tech enthusiast from Geethanjali College, passionate about AI and cybersecurity. I enjoy building real-world tech, contributing to open source and learning continuously.
+      </p>
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <h5>HTML/CSS/JS</h5>
+          <div class="progress">
+            <div class="progress-bar bg-success" style="width: 90%">90%</div>
+          </div>
+          <h5>Java</h5>
+          <div class="progress">
+            <div class="progress-bar bg-info" style="width: 80%">80%</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h5>Python</h5>
+          <div class="progress">
+            <div class="progress-bar bg-warning" style="width: 70%">70%</div>
+          </div>
+          <h5>MongoDB</h5>
+          <div class="progress">
+            <div class="progress-bar bg-danger" style="width: 60%">60%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="bg-light py-5">
+    <div class="container">
+      <h2 class="section-heading">Contact Me</h2>
+      <ul class="list-unstyled text-center">
+        <li>📧 <a href="mailto:x.x.xxxxxxxxxxxx@gmail.com">x.x.xxxxxxxxxxxx@gmail.com</a></li>
+        <li>📞 <a href="tel:xxxxxxxxxx">xxxxxxxxxx</a></li>
+        <li>🔗 <a href="https://www.linkedin.com/in/xxxxx-xxxxxxx-xxxxxxxxx-b62942306/" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Lattupally Rishitha</p>
+    <div>
+      <a href="#home" class="text-white mx-2">Home</a> |
+        <a href="#projects" class="text-white mx-2">Projects</a> |
+        <a href="#contact" class="text-white mx-2">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>
