@@ -6,115 +6,165 @@
   <title>Rishitha | MERN Stack Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-color: #f0f4f8;
+      --card-bg: #ffffff;
+      --text-color: #333;
+      --primary: cadetblue;
+      --border-color: #e0e0e0;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #1a1a1a;
+      --card-bg: #2b2b2b;
+      --text-color: #f1f1f1;
+      --primary: #00b4d8;
+      --border-color: #444;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f7f7;
       margin: 0;
-      padding: 40px 20px;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 40px;
-      border-radius: 14px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      border: 1px solid #e0e0e0;
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
     }
 
     h1 {
       font-size: 2.8em;
-      color: cadetblue;
-      margin-bottom: 0;
-      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.2em;
     }
 
     h2 {
       font-weight: 400;
-      color: #4a6fa5;
-      margin-top: 6px;
-      margin-bottom: 28px;
+      color: var(--text-color);
+      opacity: 0.8;
     }
 
-    h3 {
-      margin-top: 40px;
-      color: #444;
-      border-bottom: 2px solid cadetblue;
-      padding-bottom: 6px;
-      font-weight: 600;
+    .section {
+      margin-bottom: 40px;
     }
 
-    ol {
-      padding-left: 22px;
-      margin-top: 16px;
+    .section h3 {
+      font-size: 1.6em;
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+      margin-bottom: 20px;
     }
 
-    li {
-      margin-bottom: 14px;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
     }
 
-    a {
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 16px 20px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card a {
       text-decoration: none;
-      color: cadetblue;
+      color: var(--primary);
       font-weight: 600;
-      font-size: 1.05em;
-      transition: all 0.2s ease-in-out;
+      display: block;
     }
 
-    a:hover {
-      color: #2b7a78;
-      text-decoration: underline;
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--card-bg);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9em;
+      box-shadow: var(--shadow);
     }
 
-    hr {
-      border: none;
-      border-top: 1px solid #ccc;
-      margin: 40px 0;
-    }
-
-    p {
-      margin: 0;
+    .toggle-btn:hover {
+      background: var(--primary);
+      color: white;
     }
   </style>
 </head>
-<body>
+<body data-theme="light">
+
+  <button class="toggle-btn" onclick="toggleTheme()">🌙</button>
+
   <div class="container">
-    <h1>Rishitha</h1>
-    <h2>MERN Stack Developer</h2>
+    <div class="header">
+      <h1>Rishitha</h1>
+      <h2>MERN Stack Developer</h2>
+    </div>
 
-    <h3>My Projects</h3>
-    <ol>
-      <li><a href="p1">My Portfolio</a></li>
-    </ol>
+    <div class="section">
+      <h3>My Projects</h3>
+      <div class="grid">
+        <div class="card">
+          <a href="p1">My Portfolio</a>
+        </div>
+      </div>
+    </div>
 
-    <hr />
-
-    <h3>My Assignments</h3>
-    <ol>
-      <li><a href="a1">Assignment 1</a></li>
-      <li><a href="a2">Assignment 2</a></li>
-      <li><a href="a3">Assignment 3</a></li>
-      <li><a href="a4">Assignment 4</a></li>
-      <li><a href="a5">Assignment 5</a></li>
-      <li><a href="a6">Assignment 6</a></li>
-      <li><a href="a7">Assignment 7</a></li>
-      <li><a href="a8">Assignment 8</a></li>
-      <li><a href="a9">Assignment 9</a></li>
-      <li><a href="a10">Assignment 10</a></li>
-      <li><a href="a11">Assignment 11</a></li>
-      <li><a href="a12">Assignment 12</a></li>
-      <li><a href="a13">Assignment 13</a></li>
-      <li><a href="a14">Assignment 14</a></li>
-      <li><a href="a15">Assignment 15</a></li>
-      <li><a href="a16">Assignment 16</a></li>
-      <li><a href="a17">Assignment 17</a></li>
-      <li><a href="a18">Assignment 18</a></li>
-      <li><a href="a19">Assignment 19</a></li>
-      <li><a href="a20">Assignment 20</a></li>
-      <li><a href="portfolio2">Assignment 21(Portfolio page using bootstrap)</a></li>
-    </ol>
+    <div class="section">
+      <h3>My Assignments</h3>
+      <div class="grid">
+        <div class="card"><a href="a1">Assignment 1</a></div>
+        <div class="card"><a href="a2">Assignment 2</a></div>
+        <div class="card"><a href="a3">Assignment 3</a></div>
+        <div class="card"><a href="a4">Assignment 4</a></div>
+        <div class="card"><a href="a5">Assignment 5</a></div>
+        <div class="card"><a href="a6">Assignment 6</a></div>
+        <div class="card"><a href="a7">Assignment 7</a></div>
+        <div class="card"><a href="a8">Assignment 8</a></div>
+        <div class="card"><a href="a9">Assignment 9</a></div>
+        <div class="card"><a href="a10">Assignment 10</a></div>
+        <div class="card"><a href="a11">Assignment 11</a></div>
+        <div class="card"><a href="a12">Assignment 12</a></div>
+        <div class="card"><a href="a13">Assignment 13</a></div>
+        <div class="card"><a href="a14">Assignment 14</a></div>
+        <div class="card"><a href="a15">Assignment 15</a></div>
+        <div class="card"><a href="a16">Assignment 16</a></div>
+        <div class="card"><a href="a17">Assignment 17</a></div>
+        <div class="card"><a href="a18">Assignment 18</a></div>
+        <div class="card"><a href="a19">Assignment 19</a></div>
+        <div class="card"><a href="a20">Assignment 20</a></div>
+        <div class="card"><a href="portfolio2">Assignment 21 (Bootstrap Portfolio)</a></div>
+      </div>
+    </div>
   </div>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const current = body.getAttribute('data-theme');
+      body.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+    }
+  </script>
 </body>
-</html>  
+</html>
