@@ -67,6 +67,7 @@ select{
 }
 
 .emo1,.emo2{
+  border-radius: 15px;
     background-color: rgb(240, 237, 237);
     padding: 5px;
 }
