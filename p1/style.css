@@ -33,6 +33,7 @@ header a {
   width: 500px;
   padding: 30px;
 }
+
 .btn-knowmore {
   background-color: rgb(122, 187, 189);
   color: white;
@@ -91,7 +92,7 @@ header a {
   background-color: rgb(255, 255, 255);
   color: black;
   width: 400px;
-  height: 200px;
+  height: 350px;
   padding: 10px;
   margin: 20px;
   border: none;
